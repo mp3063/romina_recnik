@@ -13,3 +13,8 @@ Route::get('/', 'RecniciController@index');
 Route::get('search', 'RecniciController@search');
 Route::get('/{id}/destroy', 'RecniciController@destroy');
 Route::post('/ime_recnika', 'RecniciController@create');
+/**
+ * Plata
+ */
+Route::get('/plata', 'IzracunavanjePlateController@index');
+Route::post('/plata', 'IzracunavanjePlateController@plata');
