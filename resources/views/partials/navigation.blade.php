@@ -28,7 +28,7 @@
         </div>
         <div class="nav navbar-right">
             <ul class="nav navbar-nav">
-                <li><a href="/auth/logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
         <!-- /.container-fluid -->

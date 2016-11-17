@@ -7,7 +7,7 @@
     <title>Lock</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link href="/css/app.css" rel="stylesheet">
     <link href="/css/lockscreen.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,7 +24,7 @@
             <img src="/img/ghostbusters_mala.jpg" alt="ghost" class="img-responsive"></div>
     </div>
     <div class="text-center">
-        <form action="/auth/login" method="post" class="form-inline">
+        <form action="/login" method="post" class="form-inline">
             {!! csrf_field() !!}
             <input type="password" name="password" required class="form-control" placeholder="Sifra">
             <input type="hidden" name="remember">
@@ -32,7 +32,7 @@
         </form>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/all.js"></script>
 </body>
 </html>
