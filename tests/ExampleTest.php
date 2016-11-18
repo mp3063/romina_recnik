@@ -11,8 +11,16 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicExample()
+    public function test_home_screen_not_authenticated()
     {
-        $this->visit('/')->see('Laravel');
+        $this->visit('/')->see('Login');
+    }
+    
+    
+    
+    public function test_home_screen_authenticated()
+    {
+        Auth::loginUsingId(1);
+        $this->visit('/')->see('New Dictionary');
     }
 }

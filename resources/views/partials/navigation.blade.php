@@ -26,11 +26,13 @@
 
             <!-- /.navbar-collapse -->
         </div>
+        @if(Auth::check())
         <div class="nav navbar-right">
             <ul class="nav navbar-nav">
                 <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
+    @endif
         <!-- /.container-fluid -->
     </div>
 </nav>
