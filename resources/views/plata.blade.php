@@ -20,7 +20,7 @@
                 </button>
                 <br><br>
                 <div class="container">
-                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-block">Izračunaj</button>
                 </div>
             </div>
         </form>
@@ -33,15 +33,15 @@
                     <?php
                     $odD = date_create($odDatuma);
                     ?>
-                    <h3>{{date_format($odD,'F')." norma: ".round($mesecnaNorma[$i])." karaktera"}}</h3>
+                    <h4>{{date_format($odD,'F')." norma: ".round($mesecnaNorma[$i])." karaktera"}}</h4>
                     <?php
                     $i++
                     ?>
                 @endforeach
-                <h3>{{"Ukupno radnih dana: ".$ukupnoRadnihDana}}</h3>
-                <h3>{{'Dana radio: ' .$danaOdmora}}</h3>
-                <h3>{{"Ukupno karaktera potrebnih za ispunjenje norme: ".$ukupnoKaraktera}}</h3>
-                <h3>{{"Ukupna razlika u predatim i obaveznim karakterima je: ".$razlika}}</h3>
+                <h4>{{"Ukupno radnih dana: ".$ukupnoRadnihDana}}</h4>
+                <h4>{{'Dana radio: ' .$danaOdmora}}</h4>
+                <h4>{{"Ukupno karaktera potrebnih za ispunjenje norme: ".$ukupnoKaraktera}}</h4>
+                <h4>{{"Ukupna razlika u predatim i obaveznim karakterima je: ".$razlika}}</h4>
             @endif
         </div>
     </div>

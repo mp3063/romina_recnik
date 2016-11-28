@@ -8,14 +8,15 @@
     <title>RomininDnevnik</title>
 
     <!-- Bootstrap -->
-    <link href="/css/app.css" rel="stylesheet">
     <link href="/css/sweetalert.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-    {{--<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>--}}
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:600&amp;subset=latin-ext" rel="stylesheet">
+    {{--<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">--}}
 
     <style>
         body {
             padding-top: 60px;
+            font-family: "Dosis", sans-serif !important;
         }
     </style>
 
