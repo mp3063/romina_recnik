@@ -10,7 +10,8 @@
     <!-- Bootstrap -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/sweetalert.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    {{--<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>--}}
 
     <style>
         body {

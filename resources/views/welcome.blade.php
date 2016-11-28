@@ -4,7 +4,7 @@
     <div class="container text-center">
         @foreach($imena as $row)
             <div class="text-center text-success">
-                <h1>{{ucfirst($row->recnici)}}</h1>
+                <h1><b>{{ucfirst($row->recnici)}}</b></h1>
                 <hr/>
             </div>
 
