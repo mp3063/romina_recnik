@@ -1,13 +1,11 @@
 <?php
 namespace App\Logic\Plata;
 
-use Illuminate\Http\Request;
-
 class SrednjiKurs
 {
     
-    public $website;
-    public $api_id = '5a4542003e184f3de04640035bfd275a';
+    use InputFields;
+    protected $api_id = '5a4542003e184f3de04640035bfd275a';
     
     
     
@@ -18,9 +16,9 @@ class SrednjiKurs
     
     
     
-    public function getPageContent(Request $request)
+    public function getPageContent()
     {
-        $input = InputFields::datumKursa($request);
+        $input = $this->datumKursa();
         $content = [];
         if (null !== $input) {
             foreach ($input as $datum) {
@@ -37,11 +35,11 @@ class SrednjiKurs
     
     
     
-    public function kurseviEvra(Request $request)
+    public function kurseviEvra()
     {
         $data = [];
         $kursevi = [];
-        $content = $this->getPageContent($request);
+        $content = $this->getPageContent();
         foreach ($content as $page) {
             $data[] = json_decode($page, true);
         }
@@ -55,11 +53,11 @@ class SrednjiKurs
     
     
     
-    public function plataUEvrima(Request $request)
+    public function plataUEvrima()
     {
         $plataUEvrima = [];
-        if (null !== InputFields::plata($request)) {
-            $plata = InputFields::plata($request);
+        if (null !== $this->plata()) {
+            $plata = $this->plata();
         }
         $i = 0;
         if (isset($plata)) {

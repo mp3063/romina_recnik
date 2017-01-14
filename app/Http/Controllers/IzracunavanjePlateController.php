@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 class IzracunavanjePlateController extends Controller
 {
     
+    use InputFields;
+    
+    
+    
     public function index()
     {
         return view('plata');
@@ -16,16 +20,17 @@ class IzracunavanjePlateController extends Controller
     
     
     
-    public function plata(Request $request)
+    public function plataController()
     {
-        $sati = new DiffInHour();
-        $ukupnoRadnihDana = $sati->ukupanBrojRadnihDana($request);
-        $danaOdmora = $sati->brojDanaOdmora($request);
-        $ukupnoKaraktera = NormaKarakteri::ukupnoKaraktera($request);
-        $razlika = NormaKarakteri::ukupnaRazlikaPredatihIObaveznihKaraktera($request);
-        $od = InputFields::fromDate($request);
-        $mesecnaNorma = NormaKarakteri::mesecneNorme($request);
-    
+        $diffInHour = new DiffInHour($this->request);
+        $normaKarakteri = new NormaKarakteri($this->request);
+        $ukupnoRadnihDana = $diffInHour->ukupanBrojRadnihDana();
+        $danaOdmora = $diffInHour->brojDanaOdmora();
+        $ukupnoKaraktera = $normaKarakteri->ukupnoKaraktera();
+        $razlika = $normaKarakteri->ukupnaRazlikaPredatihIObaveznihKaraktera();
+        $od = $this->fromDate();
+        $mesecnaNorma = $normaKarakteri->mesecneNorme();
+        
         return view('plata',
             compact('ukupnoRadnihDana', 'danaOdmora', 'ukupnoKaraktera', 'razlika', 'od',
                 'mesecnaNorma'));

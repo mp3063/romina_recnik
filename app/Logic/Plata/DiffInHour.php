@@ -2,15 +2,18 @@
 namespace App\Logic\Plata;
 
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class DiffInHour
 {
     
-    public function nizRadnihDana(Request $request)
+    use InputFields;
+    
+    
+    
+    public function nizRadnihDana()
     {
-        $from_date = InputFields::fromDate($request);
-        $to_date = InputFields::toDate($request);
+        $from_date = $this->fromDate();
+        $to_date = $this->toDate();
         $num = 0;
         while ($num < count($from_date)) {
             $from = Carbon::parse($from_date[$num]);
@@ -32,10 +35,10 @@ class DiffInHour
     
     
     
-    public function ukupanBrojRadnihDana(Request $request)
+    public function ukupanBrojRadnihDana()
     {
         $sum = 0;
-        foreach ($this->nizRadnihDana($request) as $dan) {
+        foreach ($this->nizRadnihDana() as $dan) {
             $sum += $dan;
         }
         
@@ -44,12 +47,12 @@ class DiffInHour
     
     
     
-    public function brojRadnihDanaSaOdmorom(Request $request)
+    public function brojRadnihDanaSaOdmorom()
     {
-        $odmor = InputFields::odmor($request);
+        $odmor = $this->odmor();
         $daniSaOdmorom = [];
         $i = 0;
-        foreach ($this->nizRadnihDana($request) as $ukupno) {
+        foreach ($this->nizRadnihDana() as $ukupno) {
             $daniSaOdmorom[] = $ukupno - $odmor[$i++];
         }
         
@@ -58,10 +61,10 @@ class DiffInHour
     
     
     
-    public function brojDanaOdmora(Request $request)
+    public function brojDanaOdmora()
     {
         $sum = 0;
-        foreach ($this->brojRadnihDanaSaOdmorom($request) as $odmor) {
+        foreach ($this->brojRadnihDanaSaOdmorom() as $odmor) {
             $sum += $odmor;
         }
         

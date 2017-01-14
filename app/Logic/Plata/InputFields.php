@@ -3,54 +3,65 @@ namespace App\Logic\Plata;
 
 use Illuminate\Http\Request;
 
-class InputFields
+trait InputFields
 {
     
-    public static function filterFields(Request $request)
+    protected $request;
+    
+    
+    
+    public function __construct(Request $request)
     {
-        return insertValuesFromPostRequestIntoArray(6, $request->except('_token'));
+        $this->request = $request;
+    }
+    
+    
+    
+    public function filterFields()
+    {
+        return insertValuesFromPostRequestIntoArray(6, $this->request->except('_token'));
         
     }
     
     
     
-    public static function fromDate(Request $request)
+    public function fromDate()
     {
-        return self::filterFields($request)[0][0]->all();
+        return $this->filterFields($this->request)[0][0]->all();
     }
     
     
     
-    public static function toDate(Request $request)
+    public function toDate()
     {
-        return self::filterFields($request)[1][0]->all();
+        return $this->filterFields($this->request)[1][0]->all();
     }
     
     
     
-    public static function plata(Request $request)
+    public function plata()
     {
-        return self::filterFields($request)[2][0]->all();
+        return $this->filterFields($this->request)[2][0]->all();
     }
     
     
     
-    public static function odmor(Request $request)
+    public function odmor()
     {
-        return self::filterFields($request)[3][0]->all();
+        return $this->filterFields($this->request)[3][0]->all();
     }
     
     
     
-    public static function predatoKaraktera(Request $request)
+    public function predatoKaraktera()
     {
-        return self::filterFields($request)[4][0]->all();
+        return $this->filterFields($this->request)[4][0]->all();
     }
     
     
     
-    public static function datumKursa(Request $request)
+    public function datumKursa()
     {
-        return self::filterFields($request)[5][0]->all();
+        return $this->filterFields($this->request)[5][0]->all();
     }
 }

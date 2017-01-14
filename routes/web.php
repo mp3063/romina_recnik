@@ -17,4 +17,4 @@ Route::post('/ime_recnika', 'RecniciController@create');
  * Plata
  */
 Route::get('/plata', 'IzracunavanjePlateController@index');
-Route::post('/plata', 'IzracunavanjePlateController@plata');
+Route::post('/plata', 'IzracunavanjePlateController@plataController');
