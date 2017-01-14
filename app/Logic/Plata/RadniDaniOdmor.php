@@ -3,7 +3,7 @@ namespace App\Logic\Plata;
 
 use Carbon\Carbon;
 
-class DiffInHour
+class RadniDaniOdmor
 {
     
     use InputFields;

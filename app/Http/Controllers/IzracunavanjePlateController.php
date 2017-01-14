@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Logic\Plata\DiffInHour;
+use App\Logic\Plata\RadniDaniOdmor;
 use App\Logic\Plata\InputFields;
 use App\Logic\Plata\NormaKarakteri;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class IzracunavanjePlateController extends Controller
     
     public function plataController()
     {
-        $diffInHour = new DiffInHour($this->request);
+        $diffInHour = new RadniDaniOdmor($this->request);
         $normaKarakteri = new NormaKarakteri($this->request);
         $ukupnoRadnihDana = $diffInHour->ukupanBrojRadnihDana();
         $danaOdmora = $diffInHour->brojDanaOdmora();

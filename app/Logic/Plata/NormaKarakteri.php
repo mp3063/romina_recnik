@@ -1,6 +1,7 @@
 <?php
 namespace App\Logic\Plata;
 
+
 class NormaKarakteri
 {
     
@@ -10,10 +11,10 @@ class NormaKarakteri
     
     public function ukupnoKaraktera()
     {
-        list($radniDani, $dnevnaNorma) = $this->dnevnaNorma();
+        $dnevnaNorma = $this->dnevnaNorma();
         $sum = 0;
         $k = 0;
-        foreach ($radniDani->brojRadnihDanaSaOdmorom() as $odmor) {
+        foreach ($this->radniDaniOdmorInstance()->brojRadnihDanaSaOdmorom() as $odmor) {
             $sum += ($dnevnaNorma[$k++] * $odmor);
         }
         
@@ -24,10 +25,10 @@ class NormaKarakteri
     
     public function mesecneNorme()
     {
-        list($radniDani, $dnevnaNorma) = $this->dnevnaNorma();
+        $dnevnaNorma = $this->dnevnaNorma();
         $k = 0;
         $mesecnaNorma = [];
-        foreach ($radniDani->brojRadnihDanaSaOdmorom() as $odmor) {
+        foreach ($this->radniDaniOdmorInstance()->brojRadnihDanaSaOdmorom() as $odmor) {
             $mesecnaNorma[] = ($dnevnaNorma[$k++] * $odmor);
         }
         
@@ -62,25 +63,32 @@ class NormaKarakteri
     
     
     
-    /**
-     * @param \Illuminate\Http\
-     *
-     * @return array
-     */
-    public function dnevnaNorma(): array
+    public function dnevnaNorma()
     {
-        $radniDani = new DiffInHour($this->request);
-        $evro = new SrednjiKurs($this->request);
         $dnevnaNorma = [];
         $plata = $this->plata();
         $i = 0;
-        foreach ($radniDani->nizRadnihDana() as $radni) {
-            $plataUEvrima = $plata[$i] / $evro->kurseviEvra()[$i];
+        foreach ($this->radniDaniOdmorInstance()->nizRadnihDana() as $radni) {
+            $plataUEvrima = $plata[$i] / $this->srednjiKursInstance()->kurseviEvra()[$i];
             $dnevnaNorma[] = (($plataUEvrima / 5) * 1800) / $radni;
             $i++;
         }
-        
-        return [$radniDani, $dnevnaNorma];
+    
+        return $dnevnaNorma;
+    }
+    
+    
+    
+    protected function radniDaniOdmorInstance()
+    {
+        return new RadniDaniOdmor($this->request);
+    }
+    
+    
+    
+    protected function srednjiKursInstance()
+    {
+        return new SrednjiKurs($this->request);
     }
 }
 
