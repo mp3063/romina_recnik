@@ -1,7 +1,6 @@
 <?php
 namespace App\Logic\Plata;
 
-
 class NormaKarakteri
 {
     

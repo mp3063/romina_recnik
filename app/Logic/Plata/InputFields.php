@@ -27,41 +27,41 @@ trait InputFields
     
     public function fromDate()
     {
-        return $this->filterFields($this->request)[0][0]->all();
+        return $this->filterFields()[0][0];
     }
     
     
     
     public function toDate()
     {
-        return $this->filterFields($this->request)[1][0]->all();
+        return $this->filterFields()[1][0];
     }
     
     
     
     public function plata()
     {
-        return $this->filterFields($this->request)[2][0]->all();
+        return $this->filterFields()[2][0];
     }
     
     
     
     public function odmor()
     {
-        return $this->filterFields($this->request)[3][0]->all();
+        return $this->filterFields()[3][0];
     }
     
     
     
     public function predatoKaraktera()
     {
-        return $this->filterFields($this->request)[4][0]->all();
+        return $this->filterFields()[4][0];
     }
     
     
     
     public function datumKursa()
     {
-        return $this->filterFields($this->request)[5][0]->all();
+        return $this->filterFields()[5][0];
     }
 }

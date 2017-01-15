@@ -14,6 +14,8 @@ class RecniciController extends Controller
         $this->middleware('auth');
     }
     
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +49,7 @@ class RecniciController extends Controller
     
     public function search(Request $request)
     {
-        $id = '%'.$request->get('search').'%';
+        $id = $this->addWildCardParentisies($request->get('search'));
         $search = Sadrzaj::with('recnika')->where('engleski', 'LIKE', $id)
                          ->orWhere('srpski', 'LIKE', $id)->get();
         foreach ($search as $row) {
@@ -142,5 +144,19 @@ class RecniciController extends Controller
         Sadrzaj::destroy($id);
         
         return Redirect::to('/recnik');
+    }
+    
+    
+    
+    /**
+     * @param $inputString
+     *
+     * @return string
+     * @internal param \Illuminate\Http\Request $request
+     *
+     */
+    protected function addWildCardParentisies($inputString): string
+    {
+        return '%'.$inputString.'%';
     }
 }
