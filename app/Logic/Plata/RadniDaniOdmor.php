@@ -1,32 +1,22 @@
 <?php
 namespace App\Logic\Plata;
 
-use Carbon\Carbon;
 
 class RadniDaniOdmor extends InputFields
 {
     
     public function nizRadnihDana()
     {
-        $from_date = $this->fromDate();
-        $to_date = $this->toDate();
+        $fromDate = $this->fromDate();
+        $toDate = $this->toDate();
         $num = 0;
-        while ($num < count($from_date)) {
-            $from = Carbon::parse($from_date[$num]);
-            $to = Carbon::parse($to_date[$num]);
-            $days = $from->diffInDays($to);
-            if ($to->isWeekday()) {
-                $dani[] = (($days + 1) - ($from->diffInWeekendDays($to)));
-            } else {
-                $dani[] = ($days - ($from->diffInWeekendDays($to)));
-            }
+        foreach ($fromDate as $from) {
+            $days = $from->diffInDays($toDate[$num]);
+            $dani[] = ($days - ($from->diffInWeekendDays($toDate[$num])));
             $num++;
         }
-        if (isset($dani)) {
-            return $dani;
-        } else {
-            return [];
-        }
+    
+        return $dani;
     }
     
     
