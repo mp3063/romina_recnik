@@ -19,14 +19,12 @@ class SrednjiKurs extends InputFields
     {
         $input = $this->datumKursa();
         $content = [];
-        if (null !== $input) {
-            foreach ($input as $datum) {
-                $date = date('d.m.Y', strtotime($datum));
-                $content[] = file_get_contents($this->address($date));
-            }
-            if (empty($content)) {
-                die('Greška u preuzimanju podataka');
-            }
+        foreach ($input as $datum) {
+            $date = date('d.m.Y', strtotime($datum));
+            $content[] = file_get_contents($this->address($date));
+        }
+        if (empty($content)) {
+            die('Greška u preuzimanju podataka');
         }
         
         return $content;
@@ -55,15 +53,11 @@ class SrednjiKurs extends InputFields
     public function plataUEvrima()
     {
         $plataUEvrima = [];
-        if (null !== $this->plata()) {
-            $plata = $this->plata();
-        }
+        $plata = $this->plata();
         $i = 0;
-        if (isset($plata)) {
-            foreach ($plata as $plat) {
-                $plataUEvrima[] = $plat / $this->kurseviEvra()[$i];
-                $i++;
-            }
+        foreach ($plata as $plat) {
+            $plataUEvrima[] = $plat / $this->kurseviEvra()[$i];
+            $i++;
         }
         
         return $plataUEvrima;

@@ -20,12 +20,7 @@ class NormaKarakteri extends InputFields
     
     public function ukupnoKaraktera()
     {
-        $sum = 0;
-        foreach ($this->mesecneNorme() as $res) {
-            $sum += $res;
-        }
-        
-        return round($sum);
+        return round(array_sum($this->mesecneNorme()));
     }
     
     
@@ -46,12 +41,7 @@ class NormaKarakteri extends InputFields
     
     public function ukupnaRazlikaPredatihIObaveznihKaraktera()
     {
-        $sum = 0;
-        foreach ($this->razlikaIzmedjuObaveznihIPredatihKaraktera() as $mesecno) {
-            $sum += $mesecno;
-        }
-        
-        return round($sum);
+        return round(array_sum($this->razlikaIzmedjuObaveznihIPredatihKaraktera()));
     }
     
     

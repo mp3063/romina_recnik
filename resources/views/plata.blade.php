@@ -7,14 +7,14 @@
             {{csrf_field()}}
             <div class="change">
                 Od:
-                <input class="form-control" name="0" type="date" placeholder="From Date"/>
+                <input class="form-control" name="0" required type="date" placeholder="From Date"/>
                 Do:
-                <input class="form-control" name="1" type="date" placeholder="To Date"/>
-                <input class="form-control" name="2" size="5" type="text" placeholder="Plata"/>
+                <input class="form-control" name="1" required type="date" placeholder="To Date"/>
+                <input class="form-control" name="2" required size="5" type="text" placeholder="Plata"/>
                 <input class="form-control" name="3" size="3" type="text" placeholder="Odmor"/>
-                <input class="form-control" name="4" type="text" placeholder="Predato karaktera"/>
+                <input class="form-control" name="4" required type="text" placeholder="Predato karaktera"/>
                 Datum kursa:
-                <input class="form-control" name="5" type="date" placeholder="Datum za kurs evra"/>
+                <input class="form-control" name="5" type="date" required placeholder="Datum za kurs evra"/>
                 <button class="btn btn-success btn-add" type="button">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>

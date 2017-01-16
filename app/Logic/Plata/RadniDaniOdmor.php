@@ -1,7 +1,6 @@
 <?php
 namespace App\Logic\Plata;
 
-
 class RadniDaniOdmor extends InputFields
 {
     
@@ -23,12 +22,7 @@ class RadniDaniOdmor extends InputFields
     
     public function ukupanBrojRadnihDana()
     {
-        $sum = 0;
-        foreach ($this->nizRadnihDana() as $dan) {
-            $sum += $dan;
-        }
-        
-        return $sum;
+        return array_sum($this->nizRadnihDana());
     }
     
     
@@ -49,11 +43,6 @@ class RadniDaniOdmor extends InputFields
     
     public function brojDanaOdmora()
     {
-        $sum = 0;
-        foreach ($this->brojRadnihDanaSaOdmorom() as $odmor) {
-            $sum += $odmor;
-        }
-        
-        return $sum;
+        return array_sum($this->brojRadnihDanaSaOdmorom());
     }
 }
