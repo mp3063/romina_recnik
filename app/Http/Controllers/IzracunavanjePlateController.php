@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Logic\Plata\ProracunPlateCoordinatorClass;
+use App\Logic\Plata\ProracunPlateKrajnjiRezultat;
 use App\Logic\Plata\RadniDaniOdmor;
 use App\Logic\Plata\InputFields;
 use App\Logic\Plata\NormaKarakteri;
@@ -9,7 +11,14 @@ use Illuminate\Http\Request;
 class IzracunavanjePlateController extends Controller
 {
     
-    use InputFields;
+    protected $request;
+    
+    
+    
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
     
     
     
@@ -24,11 +33,12 @@ class IzracunavanjePlateController extends Controller
     {
         $diffInHour = new RadniDaniOdmor($this->request);
         $normaKarakteri = new NormaKarakteri($this->request);
+        $inputFields = new InputFields($this->request);
         $ukupnoRadnihDana = $diffInHour->ukupanBrojRadnihDana();
         $danaOdmora = $diffInHour->brojDanaOdmora();
         $ukupnoKaraktera = $normaKarakteri->ukupnoKaraktera();
         $razlika = $normaKarakteri->ukupnaRazlikaPredatihIObaveznihKaraktera();
-        $od = $this->fromDate();
+        $od = $inputFields->fromDate();
         $mesecnaNorma = $normaKarakteri->mesecneNorme();
         
         return view('plata',

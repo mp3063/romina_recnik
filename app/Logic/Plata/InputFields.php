@@ -3,7 +3,7 @@ namespace App\Logic\Plata;
 
 use Illuminate\Http\Request;
 
-trait InputFields
+class InputFields
 {
     
     protected $request;
@@ -27,41 +27,41 @@ trait InputFields
     
     public function fromDate()
     {
-        return $this->filterFields()[0][0];
+        return $this->filterFields()[0];
     }
     
     
     
     public function toDate()
     {
-        return $this->filterFields()[1][0];
+        return $this->filterFields()[1];
     }
     
     
     
     public function plata()
     {
-        return $this->filterFields()[2][0];
+        return $this->filterFields()[2];
     }
     
     
     
     public function odmor()
     {
-        return $this->filterFields()[3][0];
+        return $this->filterFields()[3];
     }
     
     
     
     public function predatoKaraktera()
     {
-        return $this->filterFields()[4][0];
+        return $this->filterFields()[4];
     }
     
     
     
     public function datumKursa()
     {
-        return $this->filterFields()[5][0];
+        return $this->filterFields()[5];
     }
 }

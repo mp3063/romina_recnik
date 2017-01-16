@@ -1,10 +1,9 @@
 <?php
 namespace App\Logic\Plata;
 
-class SrednjiKurs
+class SrednjiKurs extends InputFields
 {
     
-    use InputFields;
     protected $api_id = '5a4542003e184f3de04640035bfd275a';
     
     

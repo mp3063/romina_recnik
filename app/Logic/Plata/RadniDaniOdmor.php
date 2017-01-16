@@ -3,12 +3,8 @@ namespace App\Logic\Plata;
 
 use Carbon\Carbon;
 
-class RadniDaniOdmor
+class RadniDaniOdmor extends InputFields
 {
-    
-    use InputFields;
-    
-    
     
     public function nizRadnihDana()
     {

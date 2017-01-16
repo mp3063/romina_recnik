@@ -1,26 +1,8 @@
 <?php
 namespace App\Logic\Plata;
 
-class NormaKarakteri
+class NormaKarakteri extends InputFields
 {
-    
-    use InputFields;
-    
-    
-    
-    public function ukupnoKaraktera()
-    {
-        $dnevnaNorma = $this->dnevnaNorma();
-        $sum = 0;
-        $k = 0;
-        foreach ($this->radniDaniOdmorInstance()->brojRadnihDanaSaOdmorom() as $odmor) {
-            $sum += ($dnevnaNorma[$k++] * $odmor);
-        }
-        
-        return round($sum);
-    }
-    
-    
     
     public function mesecneNorme()
     {
@@ -32,6 +14,18 @@ class NormaKarakteri
         }
         
         return $mesecnaNorma;
+    }
+    
+    
+    
+    public function ukupnoKaraktera()
+    {
+        $sum = 0;
+        foreach ($this->mesecneNorme() as $res) {
+            $sum += $res;
+        }
+        
+        return round($sum);
     }
     
     
