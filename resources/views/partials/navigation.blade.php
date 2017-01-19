@@ -14,8 +14,8 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#myModal1">New Dictionary</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#myModal">Insert</a></li>
-                    <li><a href="/plata">Plata</a></li>
-                    <li><a href="/plata-baza">Plata baza</a></li>
+                    <li><a href="/plata">Salary</a></li>
+                    <li><a href="/plata-baza">Salary MySQL</a></li>
                 </ul>
                 <form action="{{URL::to('/search')}}" class="navbar-form navbar-left" role="search">
                     <div class="form-group">
