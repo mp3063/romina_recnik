@@ -28,7 +28,7 @@
     <![endif]-->
 </head>
 <body>
-
+<div id="app"></div>
 {{--Pocetak--}}
 {{--========================================================================--}}
 
@@ -42,8 +42,9 @@
 
 <!-- jQuery -->
 
-<script src="/js/app.js"></script>
-<script src="/js/all.js"></script>
-<script src="/js/main.js"></script>
+<script src="./js/jquery_1.12.4.js"></script>
+<script src="./js/jquery.isotope.js"></script>
+<script src="./js/sweetalert.min.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
