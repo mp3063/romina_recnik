@@ -15,5 +15,8 @@ class ProracunPlate extends Model
             'odmor',
             'predato_karaktera',
             'datum_kursa',
+            'norma',
+            'radnih_dana',
+            'dana_radio',
         ];
 }
