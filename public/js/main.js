@@ -130,5 +130,5 @@ $(function () {
 });
 
 $(function () {
-    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover({delay: 2000});
 });
