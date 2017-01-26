@@ -16,6 +16,6 @@ require('laravel-elixir-vue-2');
 elixir(mix => {
     mix.sass('app.scss')
         .webpack('app.js')
-        .scripts(['jquery_1.12.4.js', 'jquery.isotope.js', 'sweetalert.min.js',
+        .scripts(['jquery_1.12.4.min.js', 'jquery.isotope.js', 'sweetalert.min.js',
                   'main.js']);
 });

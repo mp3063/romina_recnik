@@ -9,7 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="/css/sweetalert.css" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:600&amp;subset=latin-ext" rel="stylesheet">
     {{--<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">--}}
 
@@ -28,7 +29,7 @@
     <![endif]-->
 </head>
 <body>
-
+<div id="app"></div>
 {{--Pocetak--}}
 {{--========================================================================--}}
 
@@ -42,8 +43,6 @@
 
 <!-- jQuery -->
 
-<script src="/js/app.js"></script>
-<script src="/js/all.js"></script>
-<script src="/js/main.js"></script>
+<script src="{!! asset('js/all-prepros.min.js') !!}"></script>
 </body>
 </html>
