@@ -9,7 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="/css/sweetalert.css" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:600&amp;subset=latin-ext" rel="stylesheet">
     {{--<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">--}}
 
@@ -42,9 +43,6 @@
 
 <!-- jQuery -->
 
-<script src="./js/jquery_1.12.4.js"></script>
-<script src="./js/jquery.isotope.js"></script>
-<script src="./js/sweetalert.min.js"></script>
-<script src="./js/main.js"></script>
+<script src="{!! asset('js/all-prepros.min.js') !!}"></script>
 </body>
 </html>

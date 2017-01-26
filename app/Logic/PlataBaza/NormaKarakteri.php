@@ -1,22 +1,32 @@
 <?php
 namespace App\Logic\PlataBaza;
 
+use App\ProracunPlate;
+
 class NormaKarakteri extends InputFields
 {
     
     public function mesecneNorme()
     {
-        $mesecnaNorma = ($this->dnevnaNorma() * $this->radniDaniOdmorInstance()
-                                                     ->brojRadnihDanaSaOdmorom());
+        $mesecnaNorma = ($this->dnevnaNorma() * $this->radniDaniOdmorInstance()->brojRadnihDanaSaOdmorom());
         
         return $mesecnaNorma;
     }
     
     
     
+    public function proracunPlateCollection()
+    {
+        return collect(ProracunPlate::all());
+    }
+    
+    
+    
     public function ukupnoKaraktera()
     {
-        return round($this->mesecneNorme());
+        $norma = $this->proracunPlateCollection()->pluck('norma');
+        
+        return array_sum($norma->all());
     }
     
     
@@ -38,8 +48,7 @@ class NormaKarakteri extends InputFields
     public function dnevnaNorma()
     {
         $plataUEvrima = $this->plata() / $this->srednjiKursInstance()->kurseviEvra();
-        $dnevnaNorma = (($plataUEvrima / 5) * 1800) / $this->radniDaniOdmorInstance()
-                                                           ->nizRadnihDana();
+        $dnevnaNorma = (($plataUEvrima / 5) * 1800) / $this->radniDaniOdmorInstance()->nizRadnihDana();
         
         return $dnevnaNorma;
     }

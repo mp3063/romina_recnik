@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid controls">
         <hr>
         <form class="form-inline text-center" action="/plata" method="post" autocomplete="off">
             {{csrf_field()}}
-            <div class="change">
+            <div class="entry">
                 Od:
                 <input class="form-control" name="0" required type="date" placeholder="From Date"/>
                 Do:

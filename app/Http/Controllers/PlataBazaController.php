@@ -5,16 +5,24 @@ use App\Logic\PlataBaza\NormaKarakteri;
 use App\Logic\PlataBaza\RadniDaniOdmor;
 use App\ProracunPlate;
 use Illuminate\Http\Request;
-use Ramsey\Uuid\Generator\CombGenerator;
 
 class PlataBazaController extends Controller
 {
     
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+    
+    
+    
+    public function index(Request $request)
+    {
+        $norma = new NormaKarakteri($request);
+        $ukupnaNorma = $norma->ukupnoKaraktera();
         $proracunPlate = ProracunPlate::all();
-        
-        return view('plata-baza', compact('proracunPlate'));
+    
+        return view('plata-baza', compact('proracunPlate', 'ukupnaNorma'));
     }
     
     
@@ -22,16 +30,28 @@ class PlataBazaController extends Controller
     public function edit($id)
     {
         $red = ProracunPlate::find($id);
-        
-        return view('partials.modal_update_plata', compact('red'));
+    
+        return $red;
     }
     
     
     
     public function update(Request $request, $id)
     {
+        $normaKarakteri = new NormaKarakteri($request);
+        $radniDani = new RadniDaniOdmor($request);
         $red = ProracunPlate::find($id);
-        $red->update($request->all());
+        $red->update([
+            'datum_od'          => $request->input('datum_od'),
+            'datum_do'          => $request->input('datum_do'),
+            'plata_iznos'       => $request->input('plata_iznos'),
+            'odmor'             => $request->input('odmor'),
+            'predato_karaktera' => $request->input('predato_karaktera'),
+            'datum_kursa'       => $request->input('datum_kursa'),
+            'norma'             => $normaKarakteri->mesecneNorme(),
+            'radnih_dana'       => $radniDani->nizRadnihDana(),
+            'dana_radio'        => $radniDani->brojRadnihDanaSaOdmorom(),
+        ]);
         
         return redirect('plata-baza');
     }
