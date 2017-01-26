@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title text-center" id="myModalLabel">Update</h4>
             </div>
-            <form class="form-inline text-center" action="/plata-baza-update/{{$proracunPlate[0]->id}}" autocomplete="off">
+            <form class="form-inline text-center" action="" autocomplete="off">
                 <div class="modal-body">
                     {{method_field('patch')}}
 
