@@ -1,3 +1,7 @@
 .highlight {
     background-color: #D9534F;
 }
+
+.proracun tr {
+    cursor: pointer;
+}

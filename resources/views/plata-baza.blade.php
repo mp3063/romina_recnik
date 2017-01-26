@@ -17,22 +17,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($proracunPlate as $plata)
-                        <tr>
-                            <td>{{Carbon\Carbon::parse($plata->datum_od)->format('d. M. Y.')}}</td>
-                            <td>{{Carbon\Carbon::parse($plata->datum_do)->format('d. M. Y.')}}</td>
-                            <td>{{$plata->plata_iznos .' din'}}</td>
-                            <td>{{$plata->odmor}}</td>
-                            <td>{{$plata->predato_karaktera}}</td>
-                            <td>{{Carbon\Carbon::parse($plata->datum_kursa)->format('d. M. Y.')}}</td>
-                            <td>
-                                <a href="#" id-value="{{$plata->id}}" data-toggle="modal" data-target="#update_plate_modal" class="label label-warning update-modal">Update</a>
-                            </td>
-                            <td>
-                                <a id="deleteModal" href="/plata-baza-delete/{{$plata->id}}" class="label label-danger delete">Delete</a>
-                            </td>
-                        </tr>
-                    @endforeach
+                    @if(isset($proracunPlate))
+                        @foreach($proracunPlate as $plata)
+                            <tr>
+                                <td>{{Carbon\Carbon::parse($plata->datum_od)->format('d. M. Y.')}}</td>
+                                <td>{{Carbon\Carbon::parse($plata->datum_do)->format('d. M. Y.')}}</td>
+                                <td>{{$plata->plata_iznos .' din'}}</td>
+                                <td>{{$plata->odmor}}</td>
+                                <td>{{$plata->predato_karaktera}}</td>
+                                <td>{{Carbon\Carbon::parse($plata->datum_kursa)->format('d. M. Y.')}}</td>
+                                <td>
+                                    <a href="#" id-value="{{$plata->id}}" data-toggle="modal" data-target="#update_plate_modal" class="label label-warning update-modal">Update</a>
+                                </td>
+                                <td>
+                                    <a id="deleteModal" href="/plata-baza-delete/{{$plata->id}}" class="label label-danger delete">Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
                 <a href="#" data-toggle="modal" class="btn btn-primary btn-block" data-target="#izracunavanje_plate_modal">New Entry</a>
@@ -47,12 +49,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($proracunPlate as $plata)
-                        <tr>
-                            <td class="norma">{{$plata->norma}}</td>
-                            <td class="razlika">{{$plata->predato_karaktera - $plata->norma}}</td>
-                        </tr>
-                    @endforeach
+                    @if(isset($proracunPlate))
+                        @foreach($proracunPlate as $plata)
+                            <tr data-toggle="popover" data-trigger="hover" data-container="body" data-placement="bottom" title="Click" data-content="Označi mesece koje želiš da sabere!">
+                                <td class="norma">{{$plata->norma}}</td>
+                                <td class="razlika">{{$plata->predato_karaktera - $plata->norma}}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </div>
