@@ -21,7 +21,7 @@
                 <span style="font-size: 20px;">Faktura za</span>
                 <span id="title" style="font-size: 20px;">{client_name}</span>
                 <br/>
-                <span id="number">{invoice_number}</span><span id="number">{{$carbon->format('-Y')}}</span>
+                <span id="number">{invoice_number}</span>
                 <br/>
                 <span class="hidden">{issue_date_label}</span> <span>{issue_date}</span>
 
