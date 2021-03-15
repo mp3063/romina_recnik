@@ -16,6 +16,7 @@
                     <li><a href="#" data-toggle="modal" data-target="#myModal">Insert</a></li>
                     <li><a href="/plata">Salary</a></li>
                     <li><a href="/plata-baza">Salary MySQL</a></li>
+                    <li><a href="/invoice">Create invoice</a></li>
                 </ul>
                 <form action="{{URL::to('/search')}}" class="navbar-form navbar-left" role="search">
                     <div class="form-group">

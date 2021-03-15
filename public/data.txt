@@ -1,0 +1,254 @@
+var ib_invoice_data = function(){/*
+#=========================================================================================================
+
+
+### Company data
+
+[{company_name}]
+Romina Jovanović PR
+
+[{company_address}]
+Stojana Novakovića 34/14
+
+[{company_city_zip_state}]
+15000 Šabac, Srbija
+
+[{company_phone_fax}]
++381641883760
+
+[{company_email_web}]
+
+
+[{payment_info1}]
+Broj tekućeg računa: 160-546096-21, Banca Intesa ad
+
+[{payment_info2}]
+Matični broj: 65365502
+
+[{payment_info3}]
+ | PIB: 111372616
+
+[{payment_info4}]
+
+
+[{payment_info5}]
+
+
+[{issue_date_label}]
+Issue Date:
+
+[{issue_date}]
+
+
+[{net_term_label}]
+
+
+[{net_term}]
+30
+
+[{due_date_label}]
+
+
+[{due_date}]
+
+
+[{currency_label}]
+Sve cene su izražene u
+
+[{currency}]
+RSD
+
+[{po_number_label}]
+
+
+[{po_number}]
+
+
+[{bill_to_label}]
+Klijent:
+
+[{client_name}]
+Ekonomski fakultet
+
+[{client_address}]
+Kamenička 6
+
+[{client_city_zip_state}]
+11000 Beograd
+
+[{client_phone_fax}]
+PIB: 100223295
+
+[{client_email}]
+MB: 07001983
+
+[{client_other}]
+
+
+[{invoice_title}]
+
+
+[{invoice_number}]
+#BR-001-2019<br />
+
+
+### Column names
+
+[{item_row_number_label}]
+#
+
+[{item_description_label}]
+Opis usluge
+
+[{item_quantity_label}]
+Broj<br />strana
+
+[{item_price_label}]
+Cena po<br />strani
+
+[{item_discount_label}]
+Discount
+
+[{item_tax_label}]
+Tax
+
+[{item_line_total_label}]
+Iznos
+
+[{item_row_number}]
+
+
+[{item_description}]
+
+
+[{item_quantity}]
+
+
+[{item_price}]
+
+
+[{item_discount}]
+
+
+[{item_tax}]
+
+
+[{item_line_total}]
+
+
+
+### Summary of totals
+
+[{amount_subtotal_label}]
+
+
+[{amount_subtotal}]
+0
+
+[{tax_name}]
+Tax:
+
+[{tax_value}]
+
+
+[{amount_total_label}]
+
+
+[{amount_total}]
+
+
+[{amount_paid_label}]
+SLOVIMA: STODESETHILJADADVESTOTINEDINARA
+
+[{amount_due_label}]
+UKUPNO ZA UPLATU:
+
+[{amount_due}]
+
+
+[{terms_label}]
+Invoice terms:
+
+[{terms}]
+16.04.2019
+
+
+### Settings
+
+# One of \'dd/mm/yyyy\', \'dd-mm-yyyy\', \'dd.mm.yyyy\', \'mm/dd/yyyy\', \'mm-dd-yyyy\', \'mm.dd.yyyy\', \'yyyy mm dd\', \'yyyy-mm-dd\', \'yyyy.mm.dd\'
+[date_format]
+dd.mm.yyyy
+
+# One of \'left\' or \'right\'
+[currency_position]
+right
+
+[show_currency]
+true
+
+# One of \'0,000.00\', \'0 000.00\', \'0000.00\', \'0.000,00\', \'0 000,00\', \'0000,00\'
+[number_format]
+0.000,00
+
+[default_columns]
+item_row_number,item_description,item_quantity,item_price,item_line_total
+
+[default_quantity]
+1
+
+[default_price]
+0
+
+[default_discount]
+0
+
+[default_tax]
+0
+
+[default_number_rows]
+3
+
+[auto_calculate_dates]
+true
+
+[load_items]
+true
+
+[invoicebus_fineprint]
+false
+
+[lang]
+en
+
+
+### Items (in this order item_description@||@item_quantity@||@item_price@||@item_discount@||@item_tax)
+
+[items]
+Prevod knjige sa engleskog na srpski jezik: "Accounting<br />Information Systems" 14. izdanje, autora: Marshall B.<br />Romney, Paul John Steinbart<br />ISBN 9781292220086<br />Poglavlja:<br />PG 3 - Systems Documentation Techniques, br. karaktera<br />101.123<br />PG 4 - Relational Databases, br. karaktera 108.204@||@116@||@950@||@@||@
+@||@@||@@||@@||@
+@||@@||@@||@@||@
+
+
+
+### Custom data (in format field_name@||@field_value)
+
+# Document custom data
+[document_custom]
+
+
+# Client custom data
+[client_custom]
+
+
+
+### Logo
+
+# base64 encoded data URI of PNG image
+[{company_logo}]
+
+
+
+
+
+#=========================================================================================================
+*/}
