@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+
 class InvoiceController extends Controller
 {
     public function index()
     {
-        return view('invoice.show');
+        $carbon = Carbon::now();
+
+        return view('invoice.show', compact('carbon'));
     }
 }

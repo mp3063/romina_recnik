@@ -50,7 +50,7 @@ Issue Date:
 
 
 [{due_date}]
-
+45
 
 [{currency_label}]
 Sve cene su izražene u
@@ -89,7 +89,7 @@ MB: 07001983
 
 
 [{invoice_number}]
-#BR-001-2019<br />
+#BR-001
 
 
 ### Column names
@@ -170,7 +170,7 @@ UKUPNO ZA UPLATU:
 Invoice terms:
 
 [{terms}]
-16.04.2019
+16.04.2021
 
 
 ### Settings
