@@ -26,3 +26,5 @@ Route::post('/unesi-u-bazu', 'PlataBazaController@store');
 Route::get('/plata-baza-update/{id}', 'PlataBazaController@update');
 Route::get('/plata-baza-edit/{id}', 'PlataBazaController@edit');
 Route::get('/plata-baza-delete/{id}', 'PlataBazaController@destroy');
+// Invoice
+Route::get('/invoice', 'InvoiceController@index');
